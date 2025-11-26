@@ -29,11 +29,11 @@ jobs:
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
         chmod 0600 $HOME/.gem/credentials
-        printf -- "---\n:github: ${rubygems_5fc5f0122c785b72b819ca1d98be7456fbb15109f2d4bfa8}\n" > $HOME/.gem/credentials
+        printf -- "---\n:github: ${rubygems_afed5058c44c7a8c998db37e331af46c37aae0bd17477cb3}\n" > $HOME/.gem/credentials
         gem build *.gemspec
         gem push --KEY github --host https://rubygems.pkg.github.com/${Ndivhuwo Justice Mamidza } *.gem
       env:
-        GEM_HOST_API_KEY: "Bearer ${{rubygems_5fc5f0122c785b72b819ca1d98be7456fbb15109f2d4bfa8}}"
+        GEM_HOST_API_KEY: "Bearer ${{rubygems_afed5058c44c7a8c998db37e331af46c37aae0bd17477cb3}}"
         OWNER: ${{ Ndivhuwo Justice Mamidza }}
 
     - name: Publish to RubyGems
@@ -41,8 +41,8 @@ jobs:
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
         chmod 0600 $HOME/.gem/credentials
-        printf -- "---\n:rubygems_api_key: ${rubygems_5fc5f0122c785b72b819ca1d98be7456fbb15109f2d4bfa8}\n" > $HOME/.gem/credentials
+        printf -- "---\n:rubygems_api_key: ${rubygems_afed5058c44c7a8c998db37e331af46c37aae0bd17477cb3}\n" > $HOME/.gem/credentials
         gem build *.gemspec
         gem push *.gem
       env:
-        GEM_HOST_API_KEY: "${{rubygems_5fc5f0122c785b72b819ca1d98be7456fbb15109f2d4bfa8}}"
+        GEM_HOST_API_KEY: "${{rubygems_afed5058c44c7a8c998db37e331af46c37aae0bd17477cb3}}"
