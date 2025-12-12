@@ -31,8 +31,8 @@ jobs:
         gem build *.gemspec
         gem push --KEY github --host https://rubygems.pkg.github.com/${OWNER} *.gem
       env:
-        GEM_HOST_API_KEY: "Bearer ${{rubygems_afed5058c44c7a8c998db37e331af46c37aae0bd17477cb3}}"
-        OWNER: ${{ Ndivhuwo Justice Mamidza }}
+        GEM_HOST_API_KEY: "Bearer ${{rubygems_API-KEYS}}"
+        OWNER: ${{GEM-OWNER}}
 
     - name: Publish to RubyGems
       run: |
