@@ -1,4 +1,21 @@
-name: pretty-14.yml
+- name: Install rbenv and ruby-build
+  run: |
+    sudo apt-get update
+    sudo apt-get install -y git build-essential libssl-dev libreadline-dev zlib1g-dev
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init - bash)"
+    ~/.rbenv/bin/rbenv install 2.6.10
+    ~/.rbenv/bin/rbenv global 2.6.10
+    ~/.rbenv/bin/rbenv rehash
+
+- name: Use installed Ruby
+  run: ruby --version
+
+name: ruby Gem
 
 on:
   push:
